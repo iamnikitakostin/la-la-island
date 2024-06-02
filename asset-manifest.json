@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/la-la-island/static/css/main.892474a2.css",
+    "main.js": "/la-la-island/static/js/main.cf94c5e1.js",
+    "static/js/453.28331f00.chunk.js": "/la-la-island/static/js/453.28331f00.chunk.js",
+    "static/media/coffee-cup.png": "/la-la-island/static/media/coffee-cup.1907bff495e9e5acf3c5.png",
+    "static/media/3.jpeg": "/la-la-island/static/media/3.262671be42b8f2e2e012.jpeg",
+    "static/media/bg.jpg": "/la-la-island/static/media/bg.725887155bf62d270b3b.jpg",
+    "static/media/2.jpeg": "/la-la-island/static/media/2.3a5728b9d56f09009d18.jpeg",
+    "static/media/1.jpeg": "/la-la-island/static/media/1.acd19c6ff37607ac3887.jpeg",
+    "static/media/global_bg.png": "/la-la-island/static/media/global_bg.18f399bb7ecc11faa0b3.png",
+    "static/media/about.jpg": "/la-la-island/static/media/about.cc0ece6f7cca2a4a908a.jpg",
+    "static/media/4.jpeg": "/la-la-island/static/media/4.482b0daa270bc48a0158.jpeg",
+    "static/media/logo.png": "/la-la-island/static/media/logo.dda5bb519403da4dd7cb.png",
+    "index.html": "/la-la-island/index.html",
+    "main.892474a2.css.map": "/la-la-island/static/css/main.892474a2.css.map",
+    "main.cf94c5e1.js.map": "/la-la-island/static/js/main.cf94c5e1.js.map",
+    "453.28331f00.chunk.js.map": "/la-la-island/static/js/453.28331f00.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.892474a2.css",
+    "static/js/main.cf94c5e1.js"
+  ]
+}
