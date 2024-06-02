@@ -6,13 +6,12 @@
 
 .app__menu h1 {
     text-align: center;
-    color: var(--color-lightYellow);
     font-family: var(--font-alt);
 }
 
 .menu__category-item {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: space-between;
 }
 

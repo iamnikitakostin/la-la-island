@@ -3,7 +3,7 @@ import "./Menu.css";
 
 function Menu() {
   const menuRef = React.useRef(null);
-  let hasScrolled = false;
+  let hasScrolled = true; //CHANGE TO FALSE LATER
 
   const triggerScrollEffect = (element) => {
     const initialScrollX = element.scrollLeft;
@@ -46,201 +46,207 @@ function Menu() {
         </h1>
         <div className="app__menu-categories" ref={menuRef}>
           <div className="app__menu-category">
-            <h2 className="p__base">
-              SANDWICH
+            <h2 className="p__base" style={{fontFamily: "var(--font-alt)", textTransform: "uppercase", paddingBottom: "1rem", marginBottom: "1rem", borderBottom: "0.25rem solid white"}}>
+              Espresso Drinks
             </h2>
             <div className="menu__category-content">
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>D Rose</p>
-                  <div className="menu__item-description p__alt">chicken breast, salami, tomato, lettuce, spring mix, cheddar cheese, whole grain mustard, mayo</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Brewed Coffee</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $11
+                <p className='menu__item-price p__alt'>
+                  $2.95 - $3.35
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Ham & Swiss</p>
-                  <div className="menu__item-description p__alt">lean ham, Swiss cheese, tomato, greens, butter & mayo</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Espresso</p>
+                  <div className="menu__item-description p__alt">2oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $10
+                <p className='menu__item-price p__alt'>
+                  $3.50
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Chicken & Bacon</p>
-                  <div className="menu__item-description p__alt">chicken breast, bacon, pico de lettuce, tomato, Sriracha mayo & cranberry may</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Espresso Macchiato</p>
+                  <div className="menu__item-description p__alt">4oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $10
+                <p className='menu__item-price p__alt'>
+                  $3.95
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Kurtis' Sandwich</p>
-                  <div className="menu__item-description p__alt">chicken breast, Canadian bacon, avocado, over-easy egg, lettuce, tomato, cheddar cheese, Sriracha mayo, sandwich bread</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Latte</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $14
+                <p className='menu__item-price p__alt'>
+                  $4.75 - $5.25
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Egg Sando</p>
-                  <div className="menu__item-description p__alt">Japanese style egg salad in white bread</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Cappuccino</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $6
+                <p className='menu__item-price p__alt'>
+                  $4.75 - $5.25
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Tuna</p>
-                  <div className="menu__item-description p__alt">tuna, tomato, lettuce, red onion in white bread</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Americano</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $6
+                <p className='menu__item-price p__alt'>
+                  $3.75 - $3.95
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Grilled Cheese</p>
-                  <div className="menu__item-description p__alt">cheddar cheese, mayo, butter and bread</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Americano Misto</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $6
+                <p className='menu__item-price p__alt'>
+                  $4.25 - $4.75
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Vegetarian</p>
-                  <div className="menu__item-description p__alt">Soy ham, tomato, cucumber, cheddar cheese, red onion</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Flat White</p>
+                  <div className="menu__item-description p__alt">8oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $10
+                <p className='menu__item-price p__alt'>
+                  $4.25
+                </p>
+              </div>
+              <div className="menu__category-item">
+                <div className="menu__item-details">
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Mocha</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
+                </div>
+                <p className='menu__item-price p__alt'>
+                  $5.50 - $6.00
+                </p>
+              </div>
+              <div className="menu__category-item">
+                <div className="menu__item-details">
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Caramel Macchiato</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
+                </div>
+                <p className='menu__item-price p__alt'>
+                  $5.25 - $5.75
                 </p>
               </div>
             </div>
           </div>
           <div className="app__menu-category">
-            <h2 className="p__base">
-              BREAKFAST (until 11am)
+            <h2 className="p__base" style={{fontFamily: "var(--font-alt)", textTransform: "uppercase", paddingBottom: "1rem", marginBottom: "1rem", borderBottom: "0.25rem solid white"}}>
+              Teas
             </h2>
             <div className="menu__category-content">
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Classic Breakfast</p>
-                  <div className="menu__item-description p__alt">2 eggs, bacon or ham or sausage, 2 toast</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Earl Grey</p>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $7
+                <p className='menu__item-price p__alt'>
+                  $3.50
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Bigger Breakfast</p>
-                  <div className="menu__item-description p__alt">2 eggs, bacon or ham or sausage, 2 toast, greens</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>English Breakfast</p>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $8
+                <p className='menu__item-price p__alt'>
+                  $3.50
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Vegan Breakfast</p>
-                  <div className="menu__item-description p__alt">2 eggs, soy ham, 2 toast</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Peppermint</p>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $7
+                <p className='menu__item-price p__alt'>
+                  $3.50
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Breakfast Croissant</p>
-                  <div className="menu__item-description p__alt">All butter croissant, scrambled eggs, ham, cheddar cheese</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Jasmine</p>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $8
+                <p className='menu__item-price p__alt'>
+                  $3.50
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Breakfast Sandwich</p>
-                  <div className="menu__item-description p__alt">Scrambled eggs, ham or bacon or sausage, sandwich bread</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Chamomile</p>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $7
+                <p className='menu__item-price p__alt'>
+                  $3.50
                 </p>
               </div>
-              <div className="menu__category-item">
-                <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Grilled Cheese</p>
-                  <div className="menu__item-description p__alt">Cheddar cheese, mayo, butter and sandwich bread</div>
-                </div>
-                <p className='menu__item-price p__base'>
-                  $6
-                </p>
-              </div>
+            
             </div>
           </div>
           <div className="app__menu-category">
-            <h2 className="p__base">
-              SOUP & NOODLE
+          <h2 className="p__base" style={{fontFamily: "var(--font-alt)", textTransform: "uppercase", paddingBottom: "1rem", marginBottom: "1rem", borderBottom: "0.25rem solid white"}}>
+              Iced Drinks
             </h2>
             <div className="menu__category-content">
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Wonton Soup</p>
-                  <div className="menu__item-description p__alt">pork & shanghai bak choy in chicken broth</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Iced Americano</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $12
+                <p className='menu__item-price p__alt'>
+                  $3.75 - $3.95
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Beef Noodle Soup</p>
-                  <div className="menu__item-description p__alt">slow braised beef shank in beef broth</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Iced Latte</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $12
+                <p className='menu__item-price p__alt'>
+                  $4.75 - $5.25
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Wonton in Chilly Oil</p>
-                  <div className="menu__item-description p__alt">10 pcs of pork wonton in chilly oil, cilantro, peanuts</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Iced Mocha</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $12
+                <p className='menu__item-price p__alt'>
+                  $5.50 - $6.00
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Dan Dan Wonton Noodle</p>
-                  <div className="menu__item-description p__alt">noodle in chilly sauce and sesame paste, 5 pcs wonton, veggies</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Iced Caramel Macchiato</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $12
+                <p className='menu__item-price p__alt'>
+                  $5.25 - $5.75
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Everything Bowl</p>
-                  <div className="menu__item-description p__alt">3 pcs chicken wonton, 3 pcs pork wonton, beef shank, house made noodle, pickled cabbage, veggies in beef broth</div>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Iced Chai Latte</p>
+                  <div className="menu__item-description p__alt">12oz - 16oz</div>
                   </div>
-                <p className='menu__item-price p__base'>
-                  $15
+                <p className='menu__item-price p__alt'>
+                  $5.00 - $5.50
                 </p>
               </div>
               <div className="menu__category-item">
                 <div className="menu__item-details">
-                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Extra Veggies/Noodle</p>
+                  <p className="menu__item-title p__base" style={{fontFamily: "var(--font-alt)"}}>Iced Matcha Latte</p>
+                <div className="menu__item-description p__alt">12oz - 16oz</div>
                 </div>
-                <p className='menu__item-price p__base'>
-                  $2
+                <p className='menu__item-price p__alt'>
+                  $5.00 - $5.50
                 </p>
               </div>
             </div>

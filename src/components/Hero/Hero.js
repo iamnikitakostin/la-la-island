@@ -7,17 +7,13 @@ function Hero() {
   return (
     <div className='app__hero'>
       <div className="app__hero-brand">
-        <div className="app__hero-cup">
+        <div className="app__hero-logo">
           <img src={coffee} alt="app logo" />
-        </div>
-        <div className="app__hero-text">
-          <h1 className='headtext__base'>Oriole Café</h1>
-          <p className='p__base'>Homemade food & specialty coffee.</p>
         </div>
       </div>
       <div className="app__hero-text">
-      <p className='headtext__base' style={{textTransform: "none", fontWeight: "400"}}>Asian cuisine paired with exquisite coffee</p>
-    </div>
+        <p className='p__base'>A cup of coffee & a croissant,<br/>what can be better?</p>
+      </div>
     </div>
   )
 }

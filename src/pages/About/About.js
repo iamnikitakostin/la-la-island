@@ -12,7 +12,7 @@ function About() {
             <img src={image} alt="restaraunt" />
           </div>
           <div className="about__context-text section__padding">
-            <p className='p__base app__wrapper_info' style={{textTransform: "none", fontWeight: "400"}}>Welcome to Oriole Café, a charming eatery owned by Taiwanese locals, offering a relaxed ambiance and an array of affordable dishes.<br/>With a clean interior, ample roadside parking, and clear WiFi access, we ensure a hassle-free dining experience.<br/>Our fusion menu features Taiwanese beef soup, spicy dumplings, Kurtis sandwiches, and more, alongside our exceptional coffee.<br/>Join us for breakfast and discover why Oriole Café is a favorite among locals and visitors alike.</p>
+            <p className='p__base' style={{textTransform: "none", fontWeight: "400"}}>Welcome to La La Island, your cozy local retreat.<br/>We offer a warm atmosphere, perfect for coffee breaks, study sessions, or catching up with friends. <br/>Join us and experience the inviting charm of our community cafe.<br/>We look forward to seeing you soon!</p>
           </div>
         </div>
 

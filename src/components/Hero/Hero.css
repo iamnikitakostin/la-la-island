@@ -1,6 +1,6 @@
 .app__hero {
     z-index: 1;
-    padding: 2rem 4rem 0 4rem;
+    padding: 0 2rem 0 2rem;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -14,32 +14,28 @@
     flex-wrap: wrap;
 }
 
-.app__hero-cup {
-    width: 150px;
+.app__hero-logo {
+    max-width: 400px;
 }
 
-.app__hero-cup img {
+.app__hero-logo img {
     width: 100%;
 }
 
-.app__hero-text .headtext__base {
-    font-weight: 900;
-}
-
-.app__hero-text p {
-    font-weight: 500;
-    font-family: var(--font-alt);
+.app__hero-text p{
+    font-weight: 200;
     text-transform: none;
     color: var(--color-white);
-}
-
-.app__hero-text h1 {
-    color: var(--color-lightYellow);
+    font-family: var(--font-alt);
+    text-shadow: 5px 4px 11px #000000;
+    text-align: center;
+    max-width: 400px;
 }
 
 @media screen and (max-width: 1200px) {
     .app__hero {
         width: 100%;
+        align-items: center;
     }
 }
 

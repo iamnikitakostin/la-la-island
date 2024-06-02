@@ -10,18 +10,17 @@ function ContactUs() {
         <div className="app__findUs-info">
           <div className='findUs__location'>
             <h2 className='p__base' style={{fontFamily: "var(--font-base)", fontWeight: "600"}}>Address</h2>
-            <p className='p__base' style={{fontWeight: "200"}}>1200 W 73rd Ave, Vancouver, BC V6P 6Z1</p>
+            <p className='p__alt' style={{fontWeight: "200"}}>2951 W Broadway<br/>Vancouver, BC</p>
           </div>
           <div className='findUs__hours'>
             <h2 className='p__base' style={{fontFamily: "var(--font-base)", fontWeight: "600"}}>Open Hours</h2>
             <ul>
-              <li className='p__base' style={{fontWeight: "200"}}>Mon - Fri: 9 a.m. – 3 p.m.</li>
-              <li className='p__base' style={{fontWeight: "200"}}>Sat - Sun: Closed</li>
+              <li className='p__alt' style={{fontWeight: "200", textTransform: "none"}}>Mon - Sun: 8 a.m. – 6 p.m.</li>
             </ul>
           </div>
           <div className="findUs__contacts">
           <h2 className='p__base' style={{fontFamily: "var(--font-base)", fontWeight: "600"}}>Call Us</h2>
-            <p className='p__base' style={{fontWeight: "200"}}>+1 (604) 263-2691</p>
+            <p className='p__alt' style={{fontWeight: "200"}}>+1 (604) 423-5811</p>
           </div>
           <div className='horizontal__divider'/>
           <div className='findUs__identity-social'>
@@ -38,10 +37,10 @@ function ContactUs() {
           <div className='identity-map'>
             <iframe
               title="Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30575.698672293616!2d-123.12756300405793!3d49.199658458393365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548674e94bdde4af%3A0x29e00a347c067550!2sOriole%20Caf%C3%A9!5e0!3m2!1sen!2sca!4v1714418785921!5m2!1sen!2sca"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.6386351707306!2d-123.1740380235121!3d49.26429487139004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486736253d8951d%3A0x919eb0dc8147b132!2sLa%20La%20Island!5e0!3m2!1sen!2sca!4v1717347655390!5m2!1sen!2sca"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: "grayscale(100%) invert(92%) contrast(83%)" }}
+              style={{ border: 0}}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -49,7 +48,7 @@ function ContactUs() {
               </iframe>
             </div>
           <div className='app__developer' style={{marginTop: "1rem"}}>
-            <p className='p__base' style={{fontWeight: "200"}}>Developed by <a href='https://nikitakostin.com' target='_blank' rel="noreferrer" style={{textDecoration: "underline", fontWeight: "200"}}>Nikita Kostin</a></p>
+            <p className='p__alt' style={{fontWeight: "200"}}>Developed by <a href='https://nikitakostin.com' target='_blank' rel="noreferrer" style={{textDecoration: "underline", fontWeight: "200"}}>Nikita Kostin</a></p>
           </div>
         </div>
       </div>

@@ -11,10 +11,10 @@ const Nav = ({setLoaded}) => {
     <div className="app__navbar-cup">
       <img src={coffee} alt="coffee cup" onLoad={() => setLoaded(true)}/>
       <ul className='app__navbar-links'>
-        <li className='p__base'><a href="#about">ABOUT US</a></li>
-        <li className='p__base'><a href="#menu">OUR MENU</a></li>
-        <li className='p__base'><a href="#gallery">GALLERY</a></li>
-        <li className='p__base'><a href="#contact">CONTACT US</a></li>
+        <li className='p__base'><a href="#about">About us</a></li>
+        <li className='p__base'><a href="#menu">Our menu</a></li>
+        <li className='p__base'><a href="#gallery">Gallery</a></li>
+        <li className='p__base'><a href="#contact">Contact us</a></li>
       </ul>
     </div>
   </nav>
