@@ -19,6 +19,8 @@ const Nav = ({ setLoaded }) => {
           alt="coffee cup" 
           onLoad={() => setLoaded(true)} 
           className="w-full"
+          height="400px"
+          width="400px"
         />
 
         {/* Navigation menu overlay */}

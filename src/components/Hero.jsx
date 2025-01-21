@@ -8,9 +8,9 @@ function Hero() {
         <img src={coffee} alt="app logo" className="w-full" />
       </div>
       <p className="mt-6 text-lg md:text-xl font-light text-center md:text-left text-white shadow-lg leading-relaxed tracking-wide bg-black/40 px-4 py-2 rounded-md">
-  A cup of coffee & a croissant,<br />
-  what could be better?
-</p>
+        A cup of coffee & a croissant,<br />
+        what could be better?
+      </p>
 
     </div>
   );

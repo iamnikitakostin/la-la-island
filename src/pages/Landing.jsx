@@ -8,7 +8,7 @@ function Landing({ setLoaded }) {
     <div
       className="relative flex flex-col justify-center items-center min-h-screen bg-cover bg-center"
       id="home"
-      style={{ backgroundImage: `url(${bg})` }}
+      style={{ backgroundImage: `url(${bg})`, backgroundPosition: "cover", minHeight: "100vh" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-[rgba(73,82,59,0.6)] z-0"></div>
