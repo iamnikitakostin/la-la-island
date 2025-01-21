@@ -1,35 +1,19 @@
 import React from 'react';
-import bgImage from '../assets/bg.jpg';
+import coffee from "../assets/logo.png";
 
-const Hero = () => {
+function Hero() {
   return (
-    <div className="relative h-screen w-full">
-      {/* Background image container */}
-      <div 
-        className="absolute inset-0 w-full h-full"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.5,
-        }}
-      />
-      
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black opacity-30" />
-      
-      {/* Content */}
-      <div className="relative h-full flex items-center justify-center text-amber-50">
-        <div className="text-center">
-          <p className="text-4xl md:text-6xl font-light text-shadow">
-            A cup of coffee & a croissant,<br />
-            what can be better?
-          </p>
-        </div>
+    <div className="flex flex-col items-start text-center md:text-left md:w-1/2 z-10 px-6">
+      <div className="max-w-[400px] mx-auto">
+        <img src={coffee} alt="app logo" className="w-full" />
       </div>
+      <p className="mt-6 text-lg md:text-xl font-light text-center md:text-left text-white shadow-lg leading-relaxed tracking-wide bg-black/40 px-4 py-2 rounded-md">
+  A cup of coffee & a croissant,<br />
+  what could be better?
+</p>
+
     </div>
   );
-};
+}
 
 export default Hero;

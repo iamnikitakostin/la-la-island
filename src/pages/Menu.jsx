@@ -1,51 +1,119 @@
-const Menu = () => {
-    const menuItems = {
-      "Espresso Drinks": [
-        { name: "Brewed Coffee", size: "12oz - 16oz", price: "$2.95 - $3.35" },
-        { name: "Espresso", size: "2oz", price: "$3.50" },
-        // ... other espresso drinks
-      ],
-      "Teas": [
-        { name: "Earl Grey", price: "$3.50" },
-        { name: "English Breakfast", price: "$3.50" },
-        // ... other teas
-      ],
-      "Iced Drinks": [
-        { name: "Iced Americano", size: "12oz - 16oz", price: "$3.75 - $3.95" },
-        { name: "Iced Latte", size: "12oz - 16oz", price: "$4.75 - $5.25" },
-        // ... other iced drinks
-      ]
+import React from 'react'
+
+function Menu() {
+  const menuRef = React.useRef(null);
+  let hasScrolled = true; //CHANGE TO FALSE LATER
+
+  const triggerScrollEffect = (element) => {
+    const initialScrollX = element.scrollLeft;
+    const scrollAmount = 500;
+
+    element.scrollTo({ left: initialScrollX + scrollAmount, behavior: 'smooth' });
+
+    setTimeout(() => {
+      element.scrollTo({ left: initialScrollX, behavior: 'smooth' });
+    }, 1000);
+  };
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasScrolled) {
+          triggerScrollEffect(menuRef.current);
+          hasScrolled = true;
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (menuRef.current) {
+      observer.observe(menuRef.current);
+    }
+    return () => {
+      if (menuRef.current) {
+        observer.unobserve(menuRef.current);
+      }
     };
-  
-    return (
-        <section id="menu" className="py-20 px-6 bg-[#1e2328]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl text-center text-[#fff] mb-12">Menu</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(menuItems).map(([category, items]) => (
-              <div key={category} className="bg-[#3b3f46] p-6 rounded-lg">
-                <h3 className="text-2xl text-[#f5a201] mb-6 pb-2 border-b border-[#f5a201]">
-                  {category}
-                </h3>
-                <div className="space-y-4">
-                  {items.map((item, index) => (
-                    <div key={index} className="flex justify-between text-[#fff]">
-                      <div>
-                        <p className="font-medium">{item.name}</p>
-                        {item.size && (
-                          <p className="text-sm text-[#fed053]">{item.size}</p>
-                        )}
-                      </div>
-                      <p className="text-[#74a065]">{item.price}</p>
-                    </div>
-                  ))}
+  }, [menuRef.current]);
+
+  return (
+    <div className="w-full min-h-screen bg-app p-8" id="menu">
+      <h1 className="text-center text-4xl font-alt text-white">
+        Menu
+      </h1>
+      <div className="flex overflow-x-scroll gap-16 mt-8" ref={menuRef}>
+        <div className="min-w-[40%]">
+          <h2 className="text-white text-xl font-alt uppercase pb-4 mb-4 border-b-2 border-white">
+            Espresso Drinks
+          </h2>
+          <div className="flex flex-col gap-4">
+            {[
+              { title: 'Brewed Coffee', description: '12oz - 16oz', price: '$2.95 - $3.35' },
+              { title: 'Espresso', description: '2oz', price: '$3.50' },
+              { title: 'Espresso Macchiato', description: '4oz', price: '$3.95' },
+              { title: 'Latte', description: '12oz - 16oz', price: '$4.75 - $5.25' },
+              { title: 'Cappuccino', description: '12oz - 16oz', price: '$4.75 - $5.25' },
+              { title: 'Americano', description: '12oz - 16oz', price: '$3.75 - $3.95' },
+              { title: 'Americano Misto', description: '12oz - 16oz', price: '$4.25 - $4.75' },
+              { title: 'Flat White', description: '8oz', price: '$4.25' },
+              { title: 'Mocha', description: '12oz - 16oz', price: '$5.50 - $6.00' },
+              { title: 'Caramel Macchiato', description: '12oz - 16oz', price: '$5.25 - $5.75' },
+            ].map((item, index) => (
+              <div className="flex justify-between items-end" key={index}>
+                <div>
+                  <p className="font-alt text-lg text-white">{item.title}</p>
+                  <div className="text-sm text-gray-300">{item.description}</div>
                 </div>
+                <p className="text-sm text-gray-300">{item.price}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
-    );
-  };
+        <div className="min-w-[40%]">
+          <h2 className="text-white text-xl font-alt uppercase pb-4 mb-4 border-b-2 border-white">
+            Teas
+          </h2>
+          <div className="flex flex-col gap-4">
+            {[
+              { title: 'Earl Grey', price: '$3.50' },
+              { title: 'English Breakfast', price: '$3.50' },
+              { title: 'Peppermint', price: '$3.50' },
+              { title: 'Jasmine', price: '$3.50' },
+              { title: 'Chamomile', price: '$3.50' },
+            ].map((item, index) => (
+              <div className="flex justify-between items-end" key={index}>
+                <p className="font-alt text-lg text-white">{item.title}</p>
+                <p className="text-sm text-gray-300">{item.price}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="min-w-[40%]">
+          <h2 className="text-white text-xl font-alt uppercase pb-4 mb-4 border-b-2 border-white">
+            Iced Drinks
+          </h2>
+          <div className="flex flex-col gap-4">
+            {[
+              { title: 'Iced Americano', description: '12oz - 16oz', price: '$3.75 - $3.95' },
+              { title: 'Iced Latte', description: '12oz - 16oz', price: '$4.75 - $5.25' },
+              { title: 'Iced Mocha', description: '12oz - 16oz', price: '$5.50 - $6.00' },
+              { title: 'Iced Caramel Macchiato', description: '12oz - 16oz', price: '$5.25 - $5.75' },
+              { title: 'Iced Chai Latte', description: '12oz - 16oz', price: '$5.00 - $5.50' },
+              { title: 'Iced Matcha Latte', description: '12oz - 16oz', price: '$5.00 - $5.50' },
+            ].map((item, index) => (
+              <div className="flex justify-between items-end" key={index}>
+                <div>
+                  <p className="font-alt text-lg text-white">{item.title}</p>
+                  <div className="text-sm text-gray-300">{item.description}</div>
+                </div>
+                <p className="text-sm text-gray-300">{item.price}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-  export default Menu;
+export default Menu
