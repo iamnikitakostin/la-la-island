@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
-import coffee from "../assets/coffee-cup.png";
+import coffee from "../assets/coffee-cup.webp";
 
 const Nav = ({ setLoaded }) => {
   const navItems = [
