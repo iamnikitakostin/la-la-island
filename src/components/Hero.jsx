@@ -5,6 +5,10 @@ import logoSm from "../assets/logo-300.webp";
 function Hero() {
   return (
     <div className="flex flex-col items-start text-center md:text-left md:w-1/2 z-10 px-6">
+      <Helmet>
+        <link rel="preload" href="/assets/logo-300.webp" as="image" media="(max-width: 767px)" />
+        <link rel="preload" href="/assets/logo-500.webp" as="image" media="(min-width: 768px)" />
+      </Helmet>
       <div className="max-w-[400px] mx-auto aspect-square">
         <picture>
           <source
