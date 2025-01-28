@@ -3,26 +3,6 @@ import logoLg from "../assets/logo-500.webp";
 import logoSm from "../assets/logo-300.webp";
 
 function Hero() {
-  // Add preload link for the appropriate image based on viewport
-  React.useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.type = 'image/webp';
-    
-    // Match the media queries used in picture element
-    const isLargeScreen = window.matchMedia('(min-width: 768px)').matches;
-    link.href = isLargeScreen ? logoLg : logoSm;
-    
-    // Add to document head
-    document.head.appendChild(link);
-    
-    // Cleanup
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
-
   return (
     <div className="flex flex-col items-start text-center md:text-left md:w-1/2 z-10 px-6">
       <div className="max-w-[400px] mx-auto aspect-square">
@@ -33,7 +13,6 @@ function Hero() {
             type="image/webp"
             height="500"
             width="500"
-            fetchPriority="high"
           />
           <source
             srcSet={logoSm}
@@ -41,7 +20,6 @@ function Hero() {
             type="image/webp"
             height="300"
             width="300"
-            fetchPriority="high"
           />
           <img
             src={logoLg} 
@@ -49,9 +27,8 @@ function Hero() {
             className="w-full"
             width="500"
             height="500" 
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
+            fetchPriority='high'
+            loading='eager'
           />
         </picture>
       </div>
