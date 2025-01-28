@@ -1,6 +1,4 @@
 import React from 'react';
-import logoLg from "../assets/logo-500.webp";
-import logoSm from "../assets/logo-300.webp";
 
 function Hero() {
   return (
@@ -8,14 +6,14 @@ function Hero() {
       <div className="max-w-[400px] mx-auto aspect-square">
         <picture>
           <source
-            srcSet={logoLg}
+            srcSet="https://res.cloudinary.com/dr1aqzogg/image/upload/f_auto,q_auto/ljlw37nva0cp14guacyr"
             media="(min-width: 768px)"
             type="image/webp"
             width="500"
             height="500"
           />
           <img
-            src={logoSm}
+            src="https://res.cloudinary.com/dr1aqzogg/image/upload/f_auto,q_auto/fqb4bsim8bfkqbf4pscw"
             alt="app logo"
             className="w-full"
             width="300"
