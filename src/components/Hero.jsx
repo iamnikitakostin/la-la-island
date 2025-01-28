@@ -11,11 +11,15 @@ function Hero() {
             srcSet={logoLg}
             media="(min-width: 768px)"
             type="image/webp"
+            height="500"
+            width="500"
           />
           <source
             srcSet={logoSm}
             media="(max-width: 767px)"
             type="image/webp"
+            height="300"
+            width="300"
           />
           <img
             src={logoLg} 
@@ -23,6 +27,8 @@ function Hero() {
             className="w-full"
             width="500"
             height="500" 
+            fetchPriority='high'
+            loading='eager'
           />
         </picture>
       </div>
