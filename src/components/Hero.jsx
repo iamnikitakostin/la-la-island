@@ -1,6 +1,7 @@
 import React from 'react';
 import logoLg from "../assets/logo-500.webp";
 import logoSm from "../assets/logo-300.webp";
+import { Helmet } from 'react-helmet';
 
 function Hero() {
   return (
