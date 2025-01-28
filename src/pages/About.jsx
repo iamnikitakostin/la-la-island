@@ -15,6 +15,8 @@ function About() {
             src={image}
             alt="restaurant"
             className="w-full h-[60vh] object-cover"
+            loading='lazy'
+            decoding='async'
           />
           {/* Decorative Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-transparent opacity-50"></div>

@@ -24,6 +24,8 @@ const Gallery = () => {
               src={images[currentSlide]}
               alt={`Gallery image ${currentSlide + 1}`}
               className="w-full h-[600px] object-cover rounded-lg"
+              loading='lazy'
+              decoding='async'
             />
             <button
               onClick={() => setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
