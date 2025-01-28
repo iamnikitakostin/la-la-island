@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react'; // Import both menu and close icons
 import coffee from "../assets/coffee-cup.webp";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-64.webp";
 
 const Nav = ({ setLoaded }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,9 @@ const Nav = ({ setLoaded }) => {
             <img 
               src={logo} 
               alt="Cafe logo" 
-              className={`h-12 w-auto transition-opacity duration-300 hover:opacity-80 ${isScrolled ? ""  : "hidden"}`}
+              className={`h-12 w-auto transition-opacity duration-300 aspect-square hover:opacity-80 ${isScrolled ? ""  : "hidden"}`}
+              width="64"
+              height="64"
             />
             <button 
               className="hamburger-btn z-50 bg-black text-amber-50"
