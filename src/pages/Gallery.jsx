@@ -30,12 +30,14 @@ const Gallery = () => {
             <button
               onClick={() => setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#1e2328]/80 hover:bg-[#1e2328] p-2 rounded-full transition-colors text-[#f5a201]"
+              aria-label="go back button"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#1e2328]/80 hover:bg-[#1e2328] p-2 rounded-full transition-colors text-[#f5a201]"
+              aria-label="go forward button"
             >
               <ChevronRight size={24} />
             </button>

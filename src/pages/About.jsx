@@ -7,7 +7,7 @@ function About() {
       className="w-full min-h-screen flex flex-col justify-start items-center gap-12 border-t-4 border-gray-400 bg-gray-50 py-12 px-6"
       id="about"
     >
-      <h1 className="text-4xl font-bold text-gray-800">About usa</h1>
+      <h1 className="text-4xl font-bold text-gray-800">About us</h1>
       <div className="relative flex flex-col md:flex-row items-center w-full max-w-6xl gap-8 bg-white shadow-md rounded-lg overflow-hidden">
         {/* Image Section */}
         <div className="flex-1 relative">
