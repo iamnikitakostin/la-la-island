@@ -1,9 +1,9 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import gallery1 from "../assets/gallery-1.jpeg";
-import gallery2 from "../assets/gallery-2.jpeg";
-import gallery3 from "../assets/gallery-3.jpeg";
-import gallery4 from "../assets/gallery-4.jpeg";
+import gallery1 from "../assets/gallery-1.webp";
+import gallery2 from "../assets/gallery-2.webp";
+import gallery3 from "../assets/gallery-3.webp";
+import gallery4 from "../assets/gallery-4.webp";
 
 
 const Gallery = () => {
