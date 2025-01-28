@@ -52,7 +52,7 @@ const Nav = ({ setLoaded }) => {
               className={`h-12 w-auto transition-opacity duration-300 hover:opacity-80 ${isScrolled ? ""  : "hidden"}`}
             />
             <button 
-              className="hamburger-btn z-50 text-amber-50"
+              className="hamburger-btn z-50 bg-black text-amber-50"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle navigation menu"
             >
