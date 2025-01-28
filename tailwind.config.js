@@ -13,7 +13,7 @@ module.exports = {
         darkYellow: '#f4b300',
         white: '#FFFFFF',
         green: '#74a065',
-        crimson: '#DC143C', // add your crimson color here
+        crimson: '#DC143C'
       },
       fontFamily: {
         base: ['Antonio', 'sans-serif'],
