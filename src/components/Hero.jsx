@@ -1,39 +1,38 @@
 import React from 'react';
 import logoLg from "../assets/logo-500.webp";
 import logoSm from "../assets/logo-300.webp";
-import { Helmet } from 'react-helmet';
 
 function Hero() {
   return (
     <div className="flex flex-col items-start text-center md:text-left md:w-1/2 z-10 px-6">
-      <Helmet>
-        <link rel="preload" href={logoLg} as="image" media="(max-width: 767px)" />
-        <link rel="preload" href={logoSm} as="image" media="(min-width: 768px)" />
-      </Helmet>
       <div className="max-w-[400px] mx-auto aspect-square">
         <picture>
           <source
             srcSet={logoLg}
             media="(min-width: 768px)"
             type="image/webp"
-            height="500"
             width="500"
+            height="500"
           />
           <source
             srcSet={logoSm}
             media="(max-width: 767px)"
             type="image/webp"
-            height="300"
             width="300"
+            height="300"
           />
           <img
-            src={logoLg} 
+            src={logoSm} // Use smaller image as fallback
             alt="app logo"
             className="w-full"
-            width="500"
-            height="500" 
-            fetchPriority='high'
-            loading='eager'
+            width="300"
+            height="300"
+            fetchpriority="high"
+            decoding="async"
+            style={{
+              contentVisibility: 'auto',
+              containIntrinsicSize: '300px'
+            }}
           />
         </picture>
       </div>
