@@ -14,25 +14,14 @@ function Hero() {
             width="500"
             height="500"
           />
-          <source
-            srcSet={logoSm}
-            media="(max-width: 767px)"
-            type="image/webp"
-            width="300"
-            height="300"
-          />
           <img
-            src={logoSm} // Use smaller image as fallback
+            src={logoSm}
             alt="app logo"
             className="w-full"
             width="300"
             height="300"
             fetchpriority="high"
             decoding="async"
-            style={{
-              contentVisibility: 'auto',
-              containIntrinsicSize: '300px'
-            }}
           />
         </picture>
       </div>
