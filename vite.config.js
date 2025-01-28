@@ -26,6 +26,13 @@ export default defineConfig({
       },
     },
     minify: 'terser', // Minify JavaScript
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    chunkSizeWarningLimit: 600,
     assetsInlineLimit: 4096, // Inline small assets to reduce HTTP requests
   },
   server: {
