@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
-import bg from '../assets/bg.jpg';
+import bg from '../assets/bg.webp';
 
 function Landing({ setLoaded }) {
   return (
