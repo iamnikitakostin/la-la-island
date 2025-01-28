@@ -1,15 +1,16 @@
 import React from 'react';
-import coffee from "../assets/logo.png";
+import logoLg from "../assets/logo-500.webp";
+import logoSm from "../assets/logo-300.webp";
 
 function Hero() {
   return (
     <div className="flex flex-col items-start text-center md:text-left md:w-1/2 z-10 px-6">
       <div className="max-w-[400px] mx-auto aspect-square">
         <img
-          srcSet="/src/assets/logo-500.webp 500w,
-                  /src/assets/logo-300.webp 300w"
+          srcSet={`${logoLg} 500w,
+                  ${logoSm} 300w`}
           sizes="(max-width: 768px) 300px, 500px"
-          src="/src/assets/logo-500.webp"
+          src={logoLg}
           alt="app logo"
           className="w-full"
         />
