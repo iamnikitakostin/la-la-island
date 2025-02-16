@@ -11,12 +11,14 @@ const Hero = () => {
         className="max-w-[400px] mx-auto aspect-square"
       >
         <picture>
+          {/* Preload the smallest image for faster initial load */}
           <link
             rel="preload"
             as="image"
-            href="https://res.cloudinary.com/dr1aqzogg/image/upload/f_auto,q_auto/ljlw37nva0cp14guacyr"
+            href="https://res.cloudinary.com/dr1aqzogg/image/upload/w_50,f_auto,q_10/ljlw37nva0cp14guacyr"
             type="image/webp"
           />
+          {/* Responsive image sources */}
           <source
             srcSet="
               https://res.cloudinary.com/dr1aqzogg/image/upload/w_50,f_auto,q_10/ljlw37nva0cp14guacyr 50w,
@@ -26,6 +28,7 @@ const Hero = () => {
             sizes="(min-width: 768px) 500px, 300px"
             type="image/webp"
           />
+          {/* Fallback image */}
           <img
             src="https://res.cloudinary.com/dr1aqzogg/image/upload/w_300,f_auto,q_auto/fqb4bsim8bfkqbf4pscw"
             alt="app logo"
@@ -35,6 +38,7 @@ const Hero = () => {
             decoding="async"
             loading="eager"
             className="w-full transition-opacity duration-300 bg-gray-200"
+            style={{ contentVisibility: 'auto' }} // Improves rendering performance
             onLoad={(e) => {
               e.target.classList.add('opacity-100');
               e.target.classList.remove('opacity-0');

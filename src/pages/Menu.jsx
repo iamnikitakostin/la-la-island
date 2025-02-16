@@ -112,10 +112,10 @@ function Menu() {
                   <div>
                     <p className="font-alt text-lg text-white">{item.title}</p>
                     {item.description && (
-                      <div className="text-sm text-gray-300">{item.description}</div>
+                      <div className="text-sm text-white">{item.description}</div>
                     )}
                   </div>
-                  <p className="text-sm text-gray-300">{item.price}</p>
+                  <p className="text-sm text-white">{item.price}</p>
                 </motion.div>
               ))}
             </div>
