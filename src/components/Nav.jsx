@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import coffee from "../assets/coffee-cup.webp";
+import desktopCup from "../assets/cup-xl.avif";
+import laptopCup from "../assets/cup-md.avif";
+import tabletCup from "../assets/cup-sm.avif";
+
 import logo from "../assets/logo-64.webp";
+import ProgressivePicture from './ProgressivePicture';
+
+const blurDataURL = "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"; 
 
 const Nav = ({ setLoaded }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -103,14 +109,19 @@ const Nav = ({ setLoaded }) => {
           transition={{ duration: 0.8 }}
           className="hidden md:block relative w-[300px] md:w-[400px] transition-transform duration-1000 ease-in-out hover:scale-105"
         >
-          <img
-            src={coffee}
+
+          <ProgressivePicture
+            sources={[
+              { srcSet: desktopCup, media: "(min-width: 1280px)" },
+              { srcSet: laptopCup, media: "(min-width: 768px)" },
+              { srcSet: tabletCup, media: "(min-width: 480px)" },
+            ]}
+            defaultSrc={tabletCup}
+            blurDataURL={blurDataURL}
             alt="coffee cup"
-            onLoad={() => setLoaded(true)}
-            className="w-full"
-            height="400"
-            width="400"
-          />
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+
           <ul className="absolute left-10 inset-0 flex flex-col justify-center items-center gap-4 px-4">
             {navItems.map((item) => (
               <motion.li
