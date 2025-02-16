@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function ContactUs() {
   return (
@@ -6,32 +7,61 @@ function ContactUs() {
       className="w-full min-h-screen bg-gray-800 text-white flex flex-col items-center justify-center gap-20 py-12 px-6 border-t-8 border-gold"
       id="contact"
     >
-      <h1 className="text-4xl font-alt text-center">Contact Us</h1>
-      <div className="flex flex-col md:flex-row gap-16 w-full max-w-screen-lg">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-4xl font-alt text-center"
+      >
+        Contact Us
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="flex flex-col md:flex-row gap-16 w-full max-w-screen-lg"
+      >
         <div className="flex flex-col justify-around items-start max-w-sm">
-          <div className="mb-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
             <h2 className="text-base font-semibold">Address</h2>
             <p className="text-sm font-light">2951 W Broadway<br />Vancouver, BC</p>
-          </div>
-          <div className="mb-8">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
             <h2 className="text-base font-semibold">Open Hours</h2>
             <ul>
               <li className="text-sm font-light">Mon - Sun: 8 a.m. – 6 p.m.</li>
             </ul>
-          </div>
-          <div className="mb-8">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
             <h2 className="text-base font-semibold">Call Us</h2>
             <p className="text-sm font-light">+1 (604) 423-5811</p>
-          </div>
+          </motion.div>
           <div className="border-t border-white my-8"></div>
           <div className="flex gap-4">
             {/* Add social links here if needed */}
           </div>
         </div>
         <div className="flex flex-col justify-center items-center w-full md:w-2/3">
-          <div className="identity-logo mb-4">
-            {/* Insert logo image here */}
-          </div>
           <div className="w-full h-72">
             <iframe
               title="Map"
@@ -44,7 +74,13 @@ function ContactUs() {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <div className="mt-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="mt-4"
+          >
             <p className="text-sm font-light">
               Developed by{' '}
               <a
@@ -56,9 +92,9 @@ function ContactUs() {
                 Nikita Kostin
               </a>
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

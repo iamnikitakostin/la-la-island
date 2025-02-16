@@ -1,19 +1,22 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
     <div className="flex flex-col items-start text-center md:text-left md:w-1/2 z-10 px-6">
-      <div className="max-w-[400px] mx-auto aspect-square">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="max-w-[400px] mx-auto aspect-square"
+      >
         <picture>
-          {/* Preload the largest image */}
           <link
             rel="preload"
             as="image"
             href="https://res.cloudinary.com/dr1aqzogg/image/upload/f_auto,q_auto/ljlw37nva0cp14guacyr"
             type="image/webp"
           />
-          
-          {/* Progressive loading with blur-up technique */}
           <source
             srcSet="
               https://res.cloudinary.com/dr1aqzogg/image/upload/w_50,f_auto,q_10/ljlw37nva0cp14guacyr 50w,
@@ -38,11 +41,16 @@ const Hero = () => {
             }}
           />
         </picture>
-      </div>
-      <p className="mt-6 text-xl md:text-2xl font-medium text-center md:text-left text-amber-50 leading-relaxed tracking-wide bg-black/40 px-6 py-3 rounded-lg shadow-xl backdrop-blur-sm">
+      </motion.div>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mt-6 text-xl md:text-2xl font-medium text-center md:text-left text-amber-50 leading-relaxed tracking-wide bg-black/40 px-6 py-3 rounded-lg shadow-xl backdrop-blur-sm"
+      >
         A cup of coffee & a croissant,<br />
         <span className="text-amber-200 font-semibold">What could be better?</span>
-      </p>
+      </motion.p>
     </div>
   );
 };
