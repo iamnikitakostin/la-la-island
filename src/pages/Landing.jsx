@@ -13,7 +13,6 @@ const blurDataURL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUND
 function Landing({ setLoaded }) {
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen max-h-screen overflow-hidden">
-      {/* Background Image */}
       <div className="absolute">
       <ProgressivePicture
         sources={[
@@ -28,12 +27,10 @@ function Landing({ setLoaded }) {
         isFullscreen={true}
       />
       
-      {/* Overlay */}
       <div className="absolute inset-0 bg-[rgba(73,82,59,0.6)] z-10"></div>
       </div>
 
 
-      {/* Content */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
