@@ -18,7 +18,7 @@ function Landing({ setLoaded }) {
         sources={[
           { srcSet: desktopBackground, media: "(min-width: 1280px)" },
           { srcSet: laptopBackground, media: "(min-width: 768px)" },
-          { srcSet: tabletBackground, media: "(min-width: 480px)" },
+          { srcSet: tabletBackground, media: "(min-width: 400px)" },
         ]}
         defaultSrc={mobileBackground}
         blurDataURL={blurDataURL}
@@ -35,7 +35,7 @@ function Landing({ setLoaded }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative z-20 flex flex-col lg:flex-row justify-between items-center w-full max-w-6xl px-6 gap-12"
+        className="relative z-20 flex flex-col md:flex-row justify-between items-center w-full max-w-6xl px-6 gap-12"
       >
         <Hero />
         <Nav setLoaded={setLoaded} />

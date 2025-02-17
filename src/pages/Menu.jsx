@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion';
 function Menu() {
   const menuRef = useRef(null);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const isInView = useInView(menuRef, { once: true, amount: 0.5 });
+  const isInView = useInView(menuRef, { once: true, amount: 0.1 });
 
   const triggerScrollEffect = (element) => {
     const initialScrollX = element.scrollLeft;
@@ -27,12 +27,12 @@ function Menu() {
   // Animation variants for Framer Motion
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
   const fadeIn = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1 } },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
   };
 
   return (
@@ -93,7 +93,7 @@ function Menu() {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             variants={fadeInUp}
-            transition={{ delay: sectionIndex * 0.2 }}
+            transition={{ delay: sectionIndex * 0.1 }}
             className="min-w-[90%] md:min-w-[40%] snap-start"
           >
             <h2 className="text-white text-xl font-alt uppercase pb-4 mb-4 border-b-2 border-white sticky top-0 bg-app z-10">
@@ -106,7 +106,7 @@ function Menu() {
                   initial="hidden"
                   animate={isInView ? 'visible' : 'hidden'}
                   variants={fadeInUp}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                   className="flex justify-between items-end p-4 hover:bg-white/10 rounded-lg transition-all duration-300 cursor-pointer"
                 >
                   <div>

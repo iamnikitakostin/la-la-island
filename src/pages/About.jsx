@@ -11,7 +11,7 @@ function About() {
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.4 }}
         className="text-4xl font-bold text-gray-800"
       >
         About us
@@ -19,7 +19,7 @@ function About() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.4, delay: 0.1 }}
         viewport={{ once: true }}
         className="relative flex flex-col md:flex-row items-center w-full max-w-6xl gap-8 bg-white shadow-lg rounded-lg overflow-hidden"
       >
@@ -41,7 +41,7 @@ function About() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             viewport={{ once: true }}
             className="text-lg font-light leading-relaxed"
           >
@@ -50,7 +50,7 @@ function About() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
             viewport={{ once: true }}
             className="text-lg font-light leading-relaxed mt-4"
           >
@@ -59,7 +59,7 @@ function About() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
             viewport={{ once: true }}
             className="text-lg font-light leading-relaxed mt-4"
           >
