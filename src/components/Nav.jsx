@@ -53,7 +53,7 @@ const Nav = ({ setLoaded }) => {
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`md:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled || isOpen ? 'bg-[rgba(73,82,59,0.95)] shadow-lg' : 'bg-transparent'} ${isScrolled ? 'py-3' : 'py-4'}`}
+          className={`md:hidden fixed top-0 right-0 w-full z-50 transition-all duration-300 ${isScrolled || isOpen ? 'bg-[rgba(73,82,59,0.95)] shadow-lg' : 'bg-transparent'} ${isScrolled ? 'py-3' : 'py-4'}`}
         >
           <div className={`container mx-auto px-4 flex ${isScrolled ? "justify-between" : "justify-end"} items-center`}>
             <img
