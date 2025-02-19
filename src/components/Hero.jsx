@@ -14,43 +14,27 @@ const Hero = () => {
         rel="preload"
         as="image"
         href={logoLaptop}
-        type="image/webp"
+        type="image/avif"
         fetchpriority="high"
       />
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.2 }}
-        className="max-w-[400px] mx-auto aspect-square"
-        style={{ viewTransitionName: 'hero-image' }}
-      >
+      <div className="max-w-[400px] mx-auto aspect-square">
         <ProgressivePicture
           sources={[
-            { 
-              srcSet: logoDesktop, 
-              media: "(min-width: 1280px)",
-              width: 500,
-              height: 500
-            },
-            { 
-              srcSet: logoLaptop, 
-              media: "(min-width: 768px)",
-              width: 300,
-              height: 300
-            },
+            { srcSet: logoDesktop, media: "(min-width: 1280px)", width: 500, height: 500 },
+            { srcSet: logoLaptop, media: "(min-width: 768px)", width: 300, height: 300 },
           ]}
           defaultSrc={logoLaptop}
           alt="La La Island logo"
           blurDataURL={blurDataURL}
-          className="w-full h-full object-cover"
-          imgClassName="transition-opacity duration-300 opacity-0"
+          className="w-full h-full object-cover transition-opacity duration-300"
+          imgClassName="opacity-0"
           width={300}
           height={300}
           fetchpriority="high"
           decoding="async"
         />
-      </motion.div>
+      </div>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
