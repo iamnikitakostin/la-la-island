@@ -46,6 +46,16 @@ const Nav = ({ setLoaded }) => {
     }
   }, [isOpen]);
 
+  // Pulse animation for the hamburger button
+  const pulseAnimation = {
+    scale: [1, 1.05, 1],
+    transition: { 
+      repeat: Infinity, 
+      repeatType: "reverse", 
+      duration: 1.5 
+    }
+  };
+
   return (
     <nav className="relative flex justify-center items-center w-full max-w-6xl mx-auto px-4 py-2">
       {isMobile && (
@@ -63,13 +73,25 @@ const Nav = ({ setLoaded }) => {
               width="64"
               height="64"
             />
-            <button
-              className="hamburger-btn z-50 bg-black text-amber-50"
+            <motion.button
+              animate={pulseAnimation}
+              className="hamburger-btn z-50 bg-black text-amber-50 p-2 rounded-md relative overflow-hidden"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle navigation menu"
             >
+              <motion.span 
+                className="absolute inset-0 bg-amber-700 opacity-30"
+                animate={{
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }}
+              />
               {isOpen ? <X size={32} /> : <Menu size={32} />}
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       )}
@@ -84,17 +106,43 @@ const Nav = ({ setLoaded }) => {
             className={`md:hidden mobile-menu fixed inset-0 z-40 bg-[rgba(73,82,59,0.95)]`}
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8 pt-16">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
                   initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-3xl text-amber-50 font-alt hover:text-amber-200 transition-colors"
+                  animate={{ 
+                    y: 0, 
+                    opacity: 1,
+                    scale: [1, 1.03, 1]
+                  }}
+                  transition={{ 
+                    duration: 0.3, 
+                    delay: index * 0.1,
+                    scale: {
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      duration: 2,
+                      delay: index * 0.5
+                    }
+                  }}
+                  className="text-3xl text-amber-50 font-alt hover:text-amber-200 transition-colors relative"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.text}
+                  <motion.span
+                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-amber-200"
+                    animate={{
+                      scaleX: [0, 1, 0],
+                      opacity: [0, 1, 0],
+                      left: ["0%", "0%", "100%"]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: index * 0.5
+                    }}
+                  />
                 </motion.a>
               ))}
             </div>
@@ -109,7 +157,6 @@ const Nav = ({ setLoaded }) => {
           transition={{ duration: 0.8 }}
           className="hidden md:block relative w-[300px] md:w-[400px] transition-transform duration-1000 ease-in-out hover:scale-105"
         >
-
           <ProgressivePicture
             sources={[
               { srcSet: desktopCup, media: "(min-width: 1280px)" },
@@ -120,29 +167,96 @@ const Nav = ({ setLoaded }) => {
             blurDataURL={blurDataURL}
             alt="coffee cup"
             className="absolute inset-0 w-full h-full object-cover z-0"
-            />
+          />
 
           <ul className="absolute left-10 inset-0 flex flex-col justify-center items-center gap-4 px-4">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <motion.li
                 key={item.href}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-                className="w-[80%] transform transition-all duration-300 hover:translate-x-2"
+                className="w-[80%]"
+                whileHover={{ translateX: 8 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <a
                   href={item.href}
                   className="relative group flex items-center w-full font-bold px-4 py-1.5
                           text-gray-700 font-alt cursor-pointer
-                          border-l-4 border-white rounded-l-md
                           transition-all duration-300 hover:text-white"
                 >
-                  <span className="relative z-20 text-amber-900 group-hover:text-white">{item.text}</span>
-                  <span className="absolute inset-0 bg-[#7e5f4d]
-                                transform scale-x-0 origin-left
-                                transition-transform duration-300
-                                group-hover:scale-x-90 -z-10
-                                rounded-l-md" />
+<motion.span
+                    className="relative z-20 text-amber-900 group-hover:text-white"
+                    whileHover={{ x: 8 }}
+                    animate={{
+                      textShadow: ["0px 0px 0px rgba(146, 64, 14, 0)", "0px 0px 5px rgba(146, 64, 14, 0.5)", "0px 0px 0px rgba(146, 64, 14, 0)"]
+                    }}
+                    transition={{
+                      textShadow: {
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        delay: index * 0.3
+                      }
+                    }}
+                  >
+                    {item.text}
+                  </motion.span>
+                  
+                  {/* Background animation */}
+                  <motion.span
+                    className="absolute inset-0 bg-[#7e5f4d] origin-left rounded-l-md opacity-0"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ 
+                      scaleX: 1,
+                      opacity: 1,
+                      transition: { duration: 0.3, ease: "easeOut" }
+                    }}
+                    animate={{
+                      opacity: [0, 0.1, 0],
+                      scaleX: [0, 0.1, 0]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: index * 0.5
+                    }}
+                  />
+                  
+                  {/* Animated underline */}
+                  <motion.span
+                    className="absolute left-0 bottom-0 w-full h-[2px] bg-white origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ 
+                      scaleX: 1,
+                      transition: { delay: 0.2, duration: 0.3 }
+                    }}
+                    animate={{
+                      scaleX: [0, 0.3, 0],
+                      opacity: [0.5, 1, 0.5]
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      delay: index * 0.4
+                    }}
+                  />
+                  
+                  {/* Subtle arrow indicator */}
+                  <motion.span
+                    className="absolute right-10 opacity-0 text-amber-100"
+                    initial={{ opacity: 0, x: -5 }}
+                    whileHover={{ opacity: 1, x: 0 }}
+                    animate={{
+                      opacity: [0, 0.5, 0],
+                      x: [-5, 0, -5]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: index * 0.3
+                    }}
+                  >
+                    →
+                  </motion.span>
                 </a>
               </motion.li>
             ))}

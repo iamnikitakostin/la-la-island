@@ -43,7 +43,7 @@ const Hero = () => {
         {/* Real Image */}
         <picture>
           <source srcSet={logoDesktop} media="(min-width: 1280px)" />
-          <source srcSet={logoLaptop} media="(min-width: 368px)" width={300} />
+          <source srcSet={logoDesktop} media="(min-width: 368px)" width={300} />
           <img
             src={logoMobile}
             alt="La La Island logo"
